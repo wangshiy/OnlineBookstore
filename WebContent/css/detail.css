@@ -1,0 +1,236 @@
+@font-face{
+		font-family: AnglicanText;
+		src: url(../fonts/AnglicanText.ttf);
+}
+
+#pretzel-video {
+margin: 0px auto;
+z-index: -1;
+position: absolute;
+right: 0;
+left: 0;
+top: 20px;
+height: 85%;
+}
+
+#logo{
+	background-color:transparent;
+	height:80px;
+	width:80px;
+}
+
+#message-text{
+	font-size: 14px !important;
+}
+
+.modal-form{
+	font-size: 14px !important;
+}
+
+.navbar{
+	background-color: transparent;
+	border:0;
+}
+
+.btn-default, .dropdown-menu li{
+	font-size:20px;
+}
+
+.form-control{
+	/*font-size:20px;*/
+	min-width:120px;
+	width:80%;
+}
+
+.nav-button{
+	background-color: rgba(32,178,170,1.0);
+	color:white;
+	border:0;
+	margin-top:50px;
+}
+
+.go{
+	background-color: rgba(255,68,68,1.0);
+	border:0;
+	color:white;
+}
+
+.go:hover{
+	background-color: rgba(255,68,68,0.8);
+	border:0;
+	color:white;
+}
+
+.nav-button:hover{
+	background-color: rgba(0,206,209,0.5);
+	color:white;
+	border:0;
+}
+
+.more{
+	display: inline-block;
+	margin: 0 20px 10px 20px;
+}
+
+.title{
+	display: inline-block;
+}
+
+.welcome{
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+	height: 420px;
+	width: 30%;
+}
+
+.welcome h2{
+	color: #fff;
+	font-size: 80px;
+  font-weight: 800;
+}
+
+.welcome p{
+	color: #fff;
+	font-size: 30px;
+  font-weight: 300;
+	margin-top: 50px;
+}
+
+.input-group input, .input-group button, .navbar-nav button{
+	height: 45px;
+}
+
+.searchbox{
+	margin-top:50px;
+}
+
+.slide-img{
+	width: 160px !important;
+	height: 220px !important;
+	display: inline-block !important;
+	margin: 5px 5px 5px 5px;
+}
+
+.slide-title{
+	padding: 0;
+}
+
+hr { 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 2px;
+}
+
+.carousel-control{
+	opacity:0;
+	width:10%;
+}
+
+#carousel-example-generic{
+	padding:0px;
+}
+
+.hot-tags-col5{
+	list-style-type: none;
+	padding: 0;
+}
+.tag_title {
+	display: block; 
+	float: none;
+	font-size: 18px;
+}
+.tag,.tag:link,.tag:visited{
+	width:auto;
+	word-break:keep-all;
+	white-space:nowrap;
+	background-color:#f5f5f5;
+	color:#37A;
+	font-size:13px;
+	padding:2px 11px 0;
+	display:inline-block !important;
+	margin:0 3px 5px 0;
+	line-height:20px;
+	}
+.tag:hover,.tag:active{
+	background-color:#e8e8e8;
+	color:#37A;
+}
+
+.clearfix{
+	padding-left:0;
+}
+.book{
+	width: 330px;
+	height: 440px;
+
+	display: inline-block;
+	margin: 15px 15px 15px 15px;
+	padding:10px;
+	/*background-color: blue;
+	position: relative;*/
+}
+
+.book-picture{
+	padding-top: 20px;
+}
+
+.book-title{
+	font-size:16px;
+}
+.book-intro{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height:160px;
+}
+
+.book-intro::first-letter{
+	font-family: AnglicanText;
+	font-size: 25px;
+}
+
+.book-tag{
+	margin:10px 0 0 0;
+}
+
+.book-tag ul{
+	padding-left: 0;
+}
+
+.book-rating{
+	margin: 10px 0 10px 0;
+}
+
+.star{
+	font-size:18px;
+	color:gold;
+}
+
+.score{
+	font-size: 14px;
+	color: #f00;
+}
+
+h4{
+	display: inline-block;
+}
+
+h3{
+	margin-top:0;
+}
+
+.book-entry,.checkOutbook-entry{
+	margin: 10px;
+	padding: 10px;
+}
+
+
+
+
+
+
+

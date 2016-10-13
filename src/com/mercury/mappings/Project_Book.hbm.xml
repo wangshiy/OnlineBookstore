@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd"> 
+<hibernate-mapping>     
+    <class name="com.mercury.beans.Project_Book" table="Project_Books"> 
+     
+        <id name="isbn" column="isbn"></id> 
+        
+        <property name="bookname" column="bookname"/>
+        <property name="series" column="series"/>
+        <property name="author" column="author"/>
+        <property name="press" column="press"/>
+        <property name="released" column="released"/>
+        <property name="cover" column="cover"/>
+        <property name="content1" column="content1"/>
+        <property name="content2" column="content2"/>
+        <property name="content3" column="content3"/>
+        <property name="price" column="price"/>
+        <property name="quantity" column="quantity"/>
+        <property name="description" column="description"/>
+        
+        <set name="tags" table="Project_Books_Tags" lazy="false" fetch="select">
+            <key column = "isbn"></key>        
+            <many-to-many entity-name="com.mercury.beans.Project_Tag" column = "tagname"></many-to-many>
+        </set>            
+        
+        <set name="book_transactions" table="Project_Transactions" inverse="true" lazy="false" fetch="select" cascade="all">
+            <key column = "isbn"></key>        
+            <one-to-many class="com.mercury.beans.Project_Transaction" />
+        </set>
+        
+        <set name="book_comments" table="Project_Comments" inverse="true" lazy="false" fetch="select" cascade="all">
+            <key column = "isbn"></key>        
+            <one-to-many class="com.mercury.beans.Project_Comment" />
+        </set>
+        
+    </class>
+</hibernate-mapping>

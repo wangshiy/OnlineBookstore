@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd"> 
+<hibernate-mapping>     
+    <class name="com.mercury.beans.Project_Tag" table="Project_Tags">  
+    
+        <id name="tagname" column="tagname"></id> 
+        
+        <set name="books" table="Project_Books_Tags" lazy="false" fetch="select" cascade="all" >
+            <key column = "tagname"></key>        
+            <many-to-many entity-name="com.mercury.beans.Project_Book" column = "isbn"></many-to-many>
+        </set>
+        
+    </class>
+</hibernate-mapping>

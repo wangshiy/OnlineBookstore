@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd"> 
+<hibernate-mapping>     
+    <class name="com.mercury.beans.Project_User" table="Project_Users"> 
+     
+        <id name="u_id" column="u_id">
+        	<generator class="increment"></generator>
+        </id> 
+        <property name="username" column="username"/>
+        <property name="email" column="email"/>
+        <property name="password" column="password"/>
+        <property name="authority" column="authority"/>
+        <property name="balance" column="balance"/>
+        <property name="image" column="image"/>     
+        
+        <set name="transactions" table="Project_Transactions" inverse="true" lazy="false" fetch="select" cascade="all">
+            <key column = "u_id"></key>        
+            <one-to-many class="com.mercury.beans.Project_Transaction" />
+        </set>
+        
+        <set name="comments" table="Project_Comments" inverse="true" lazy="false" fetch="select" cascade="all">
+            <key column = "u_id"></key>        
+            <one-to-many class="com.mercury.beans.Project_Comment" />
+        </set>
+        
+    </class>
+</hibernate-mapping>

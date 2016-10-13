@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xsi:schemaLocation="
+    	http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+    <!--  <context:component-scan base-package="com.mercury.controllers" /> -->
+    <mvc:annotation-driven/>
+    <bean id="viewResolver"
+        class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+        <property name="viewClass"
+            value="org.springframework.web.servlet.view.JstlView" />
+        <property name="prefix" value="/WEB-INF/pages/" />
+        <property name="suffix" value=".jsp" />
+    </bean>
+    
+    <bean id="helloController" class="com.mercury.controller.HelloController">
+    	<property name="hs" ref="helloService"/>
+    	<property name="viewPage" value="result"/> <!-- zhu ru dao controller bean de liang ge property -->
+    </bean>
+    
+    <bean id="helloService" class="com.mercury.service.HelloService">
+    	<property name="hd" ref="helloDao"/>
+    </bean>
+    
+    <bean id="helloDao" class="com.mercury.dao.impl.HelloDaoImpl"/>
+    <!-- Yansan -->
+    	<!-- Tags -->
+    	<bean id="tagController" class="com.mercury.controller.TagController">
+			<property name="tagService" ref="tagService"/>
+		</bean>
+		<bean id="tagService" class="com.mercury.service.TagService">
+			<property name="tagDao" ref="tagDao"/>
+		</bean>
+		<bean id="tagDao" class="com.mercury.dao.impl.TagDaoImpl"/>
+    	<!-- User -->
+    	<bean id="userController" class="com.mercury.controller.UserController">
+			<property name="userService" ref="userService"/>
+		</bean>
+		<bean id="userService" class="com.mercury.service.UserService">
+			<property name="userDao" ref="userDao"/>
+		</bean>
+		<bean id="userDao" class="com.mercury.dao.impl.UserDaoImpl"/>
+    	<!-- Comment -->
+    	<bean id="commentController" class="com.mercury.controller.CommentController">
+			<property name="commentService" ref="commentService"/>
+		</bean>
+		<bean id="commentService" class="com.mercury.service.CommentService">
+			<property name="commnetDao" ref="commnetDao"/>
+		</bean>
+		<bean id="commnetDao" class="com.mercury.dao.impl.CommentDaoImpl"/>
+    	<!-- Book -->
+	 	<bean id="bookController" class="com.mercury.controller.BookController">
+			<property name="bookService" ref="bookService"/>
+		</bean>
+		<bean id="bookService" class="com.mercury.service.BookService">
+			<property name="bookDao" ref="bookDao"/>
+		</bean>
+		<bean id="bookDao" class="com.mercury.dao.impl.BookDaoImpl"/>
+    	<!-- upload files -->
+		<bean id="multipartResolver" 
+			class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		    <property name="maxUploadSize" value="104857600"/>
+		    <property name="maxInMemorySize" value="4096"/>
+		</bean>
+    <!-- Yansan -->
+</beans>

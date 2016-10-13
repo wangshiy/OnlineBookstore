@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="Project_Bookstore_XML">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <dependent-module archiveName="org.springframework.web.servlet-3.1.0.M1.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/org.springframework.web.servlet-3.1.0.M1/org.springframework.web.servlet-3.1.0.M1">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="context-root" value="Project_Bookstore_XML"/>
+        <property name="java-output-path" value="/Project_Bookstore_XML/build/classes"/>
+    </wb-module>
+</project-modules>
